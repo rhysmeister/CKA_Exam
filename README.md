@@ -1,5 +1,9 @@
 # CKA_Exam
-Certified KUberentes Administrator Exam Notes and Cheatsheet
+Certified Kuberentes Administrator Exam Notes and Cheatsheet.
+
+These notes are not intended to be comprehensive but to provide a quick guide for cramming before the exam.
+
+These notes are based on the official CKA curriculum. For more details on the CKA curriculum, refer to the [CNCF official document](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.30.pdf).
 
 # Certified Kubernetes Administrator (CKA) Exam Curriculum
 
