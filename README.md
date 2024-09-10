@@ -10,6 +10,26 @@ This document outlines the key knowledge, skills, and abilities a Certified Kube
 ### 25% - Cluster Architecture, Installation & Configuration
 - Manage role-based access control (RBAC)
 - Use Kubeadm to install a basic cluster
+  * [kubeadm](https://kubernetes.io/docs/reference/setup-tools/kubeadm/)
+  * [Creating a cluster with kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+
+```bash
+sudo kubeadm init --apiserver-advertise-address=$IPADDR \
+    --apiserver-cert-extra-sans=$IPADDR \
+    --pod-network-cidr=$POD_CIDR \
+    --node-name $NODENAME
+```
+
+||Command part||Description||
+|--------------|------------|
+|kubeadm init  |Initializes a Kubernetes control-plane node|
+|--apiserver-advertise-address|The IP address the API Server will advertise it's listening on. If not set the default network interface will be used|
+|--apiserver-cert-extra-sans|Optional extra Subject Alternative Names (SANs) to use for the API Server serving certificate. Can be both IP addresses and DNS names|
+|--pod-network-cidr|Specify range of IP addresses for the pod network. If set, the control plane will automatically allocate CIDRs for every node|
+|--node-name|Specify the node name|
+
+
+
 - Manage a highly-available Kubernetes cluster
 - Provision infrastructure to deploy a Kubernetes cluster
 - Perform a version upgrade on a Kubernetes cluster using Kubeadm
@@ -52,3 +72,7 @@ This document outlines the key knowledge, skills, and abilities a Certified Kube
 ---
 For more details on the CKA curriculum, refer to the [CNCF official document](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.30.pdf).
 
+# Practice Lab Questions & Solutions
+
+- https://killer.sh/ The official Lab simulator.
+- https://github.com/devopshubproject/cka-lab/ A few years old but a good set of problems and solutions.
