@@ -49,7 +49,14 @@ sudo kubeadm join 10.128.0.37:6443 --token j4eice.33vgvgyf5cxw4u8i \
     --discovery-token-ca-cert-hash sha256:37f94469b58bcc8f26a4aa44441fb17196a585b37288f85e22475b00c36f1c61
 ```
 
-Back on control plane verify nodes have join successfully...
+|Command part  |Description |
+|--------------|------------|
+|kubeadm join  |Initializes a Kubernetes worker node and joins it to the cluster|
+|10.128.0.37:6443|API server endpoint|
+|--token|Use this token for both discovery-token and tls-bootstrap-token when those values are not provided|
+|--discovery-token-ca-cert-hash|For token-based discovery, validate that the root CA public key matches this hash (format: "<type>:<value>")|
+
+Back on control plane verify nodes have joined successfully...
 
 ```bash
 kubectl get nodes
