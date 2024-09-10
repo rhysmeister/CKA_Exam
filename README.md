@@ -20,7 +20,7 @@ sudo kubeadm init --apiserver-advertise-address=$IPADDR \
     --node-name $NODENAME
 ```
 
-||Command part||Description||
+|Command part  |Description |
 |--------------|------------|
 |kubeadm init  |Initializes a Kubernetes control-plane node|
 |--apiserver-advertise-address|The IP address the API Server will advertise it's listening on. If not set the default network interface will be used|
@@ -28,7 +28,32 @@ sudo kubeadm init --apiserver-advertise-address=$IPADDR \
 |--pod-network-cidr|Specify range of IP addresses for the pod network. If set, the control plane will automatically allocate CIDRs for every node|
 |--node-name|Specify the node name|
 
+kubectl config file for cluster access...
 
+```bash
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+Regenerate join command if required...
+
+```bash
+sudo kubeadm token create --print-join-command
+```
+
+Run on worker nodes...
+
+```bash
+sudo kubeadm join 10.128.0.37:6443 --token j4eice.33vgvgyf5cxw4u8i \
+    --discovery-token-ca-cert-hash sha256:37f94469b58bcc8f26a4aa44441fb17196a585b37288f85e22475b00c36f1c61
+```
+
+Back on control plane verify nodes have join successfully...
+
+```bash
+kubectl get nodes
+```
 
 - Manage a highly-available Kubernetes cluster
 - Provision infrastructure to deploy a Kubernetes cluster
