@@ -47,3 +47,24 @@ In k8s version 1.19+, we can specify the --replicas option to create a deploymen
 ```bash
 kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml
 ```
+
+# 3 Examples for generating services with kubectl
+
+## ClusterIP (default type)
+
+```bash
+kubectl create service clusterip my-service --tcp=80:80 --dry-run=client -o yaml
+```
+
+## NodePort
+
+```bash
+kubectl create service nodeport my-service --tcp=80:80 --dry-run=client -o yaml --type=NodePort
+```
+
+## LoadBalancer
+
+```bash
+kubectl create service loadbalancer my-service --tcp=80:80 --dry-run=client -o yaml --type=LoadBalancer
+```
+
