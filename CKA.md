@@ -59,12 +59,12 @@ kubectl create service clusterip my-service --tcp=80:80 --dry-run=client -o yaml
 ## NodePort
 
 ```bash
-kubectl create service nodeport my-service --tcp=80:80 --dry-run=client -o yaml --type=NodePort
+kubectl create service nodeport my-service --tcp=80:80 --dry-run=client -o yaml
 ```
 
 ## LoadBalancer
 
 ```bash
-kubectl create service loadbalancer my-service --tcp=80:80 --dry-run=client -o yaml --type=LoadBalancer
+kubectl create service loadbalancer my-service --tcp=80:80 --dry-run=client -o yaml
 ```
 
