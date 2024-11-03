@@ -71,5 +71,5 @@ kubectl create service loadbalancer my-service --tcp=80:80 --dry-run=client -o y
 # Ingress examples
 
 ```bash
-kubectl create ingress ingress-shop --rule="shop.mzshop.com=shop-service:80"
+kubectl create ingress ingress-shop --rule="shop.myshop.com=shop-service:80"
 ```
