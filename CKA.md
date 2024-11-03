@@ -68,3 +68,8 @@ kubectl create service nodeport my-service --tcp=80:80 --dry-run=client -o yaml
 kubectl create service loadbalancer my-service --tcp=80:80 --dry-run=client -o yaml
 ```
 
+# Ingress examples
+
+```bash
+kubectl create ingress ingress-shop --rule="shop.mzshop.com=shop-service:80"
+```
