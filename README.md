@@ -70,6 +70,22 @@ kubectl get nodes
 - Provision infrastructure to deploy a Kubernetes cluster
 - Perform a version upgrade on a Kubernetes cluster using Kubeadm
 - Implement etcd backup and restore
+  * [Backup etcd](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#backing-up-an-etcd-cluster)
+  * [Restore etcd](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/#restoring-an-etcd-cluster)
+
+## etcd Backup Example
+
+```bash
+ETCDCTL_API=3 etcdctl --endpoints localhost:2379 \
+  --cert=/etc/kubernetes/pki/etcd/server.crt \
+  --key=/etc/kubernetes/pki/etcd/server.key \
+  --cacert=/etc/kubernetes/pki/etcd/ca.crt \
+  snapshot save /opt/etcd-backup.db
+```
+
+
+
+
 - Understand deployments, rolling updates, and rollbacks
 - Use ConfigMaps and Secrets to configure applications
 - Know how to scale applications
