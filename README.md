@@ -124,7 +124,8 @@ ETCDCTL_API=3 etcdctl --endpoints localhost:2379 \
 ---
 For more details on the CKA curriculum, refer to the [CNCF official document](https://github.com/cncf/curriculum/blob/master/CKA_Curriculum_v1.30.pdf).
 
-# Practice Lab Questions & Solutions
+# Practice Lab Questions, Solutions & Examples
 
 - https://killer.sh/ The official Lab simulator.
 - https://github.com/devopshubproject/cka-lab/ A few years old but a good set of problems and solutions.
+- https://github.com/ahmetb/kubernetes-network-policy-recipes/ A Great set of Network Policy examples
